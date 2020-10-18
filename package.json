@@ -1,0 +1,33 @@
+{
+  "name": "cypress-allure-ci",
+  "version": "1.0.0",
+  "description": "Cypress automated testing process",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open --config ignoreTestFiles=*.js testFiles=**/*.feature",
+    "cy:test": "cypress run --env allure=true --config ignoreTestFiles=*.js testFiles=**/*.feature"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keeper73/cypress-allure-ci.git"
+  },
+  "keywords": [
+    "sdet",
+    "cucumber",
+    "cypress",
+    "allure"
+  ],
+  "author": "keeper73",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keeper73/cypress-allure-ci/issues"
+  },
+  "homepage": "https://github.com/keeper73/cypress-allure-ci#readme",
+  "devDependencies": {
+    "cypress": "^5.4.0",
+    "cypress-cucumber-preprocessor": "^4.0.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
