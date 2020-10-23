@@ -30,13 +30,13 @@ When('I feel fromDatePicker', () => {
 
 
 Then("I see {string} in the from tooltip", (text) => {
-    mainPage.getFromStationTooltip().should('be.visible').should('have.text', text);
+    mainPage.fromStationTooltip.should('be.visible').should('have.text', text);
 })
 
 Then("I see {string} in the to tooltip", (text) => {
-    mainPage.getToStationTooltip().should('be.visible').should('have.text', text);
+    mainPage.toStationTooltip.should('be.visible').should('have.text', text);
 })
 
 Then("I see {string} in the departure time tooltip", (text) => {
-    mainPage.getDepartureTimeTooltip().should('be.visible').should('have.text', text);
+    mainPage.departureTimeTooltip.should('be.visible').should('have.text', text);
 })

@@ -4,62 +4,64 @@ class MainPage{
         cy.visit('/');
     }
 
-    clickFindButton(){
-        cy.get('.rzd-go-to-result-button').click();
-    }
-
-    getFromStationTooltip(){
+    get fromStationTooltip(){
         return cy.get('#tooltip-station-from-empty > span');
     }
 
-    getToStationTooltip(){
+    get toStationTooltip(){
         return cy.get('#tooltip-station-to-empty > span');
     }
 
-    getDepartureTimeTooltip(){
+    get departureTimeTooltip(){
         return cy.get('#tooltip-date-departure-empty > span');
     }
 
-    getReturnTimeTooltip(){
-        return cy.get('#tooltip-date-return-empty > span');
-    }
-
-    getDirectionFrom(){
+    get directionFrom(){
         return cy.get('#direction-from');
     }
 
-    getDirectionTo(){
+    get directionTo(){
         return cy.get('#direction-to');
     }
 
-    getDatepickerFrom(){
+    get datepickerFrom(){
         return cy.get('#datepicker-from');
     }
 
-    getDatepickerTo(){
+    get datepickerTo(){
         return cy.get('#datepicker-to');
     }
 
+    get findButton(){
+        return cy.get('.rzd-go-to-result-button');
+    }
+
     setFromStation(text){
-        this.getDirectionFrom().type(text);
+        this.directionFrom.type(text);
     }
 
     setToStation(text){
-        this.getDirectionTo().type(text);
+        this.directionTo.type(text);
+    }
+
+    clickMiddleDatePickerGroup(x,y){
+        cy.get('.rzd-datepicker-group-middle > .rzd-datepicker-calendar > tbody > :nth-child('+x+') > :nth-child('+y+') > .rzd-state-default').click();
     }
 
     setDatePickerTo(){
-        this.getDatepickerTo().click().then(()=>{
-            cy.get('.rzd-datepicker-group-middle > .rzd-datepicker-calendar > tbody > :nth-child(4) > :nth-child(5) > .rzd-state-default').click();
+        this.datepickerTo.click().then(()=>{
+            this.clickMiddleDatePickerGroup(4,5);
         });
     }
 
     setDatePickerFrom(){
-        this.getDatepickerFrom().click().then(()=>{
-            cy.get('.rzd-datepicker-group-middle > .rzd-datepicker-calendar > tbody > :nth-child(5) > :nth-child(3) > .rzd-state-default').click();
+        this.datepickerFrom.click().then(()=>{
+            this.clickMiddleDatePickerGroup(5,3);
         });
     }
-
+    clickFindButton(){
+        this.findButton.click();
+    }
 }
 
 export default  MainPage;
