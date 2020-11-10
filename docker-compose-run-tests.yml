@@ -1,6 +1,5 @@
 version: '3.2'
-# We need to use both file names to run:
-#
+# to run:
 #   docker-compose -f docker-compose-run-tests.yml up --exit-code-from cypress
 #
 services:

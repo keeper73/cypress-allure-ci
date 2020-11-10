@@ -1,8 +1,8 @@
 # WARNING: this file was based on cypress/included
 # build this image with command
-#   docker image build -t cy-cucumber .
+#   docker image build -t cypress-cucumber .
 #
-FROM cypress/browsers:node12.14.1-chrome85-ff81
+FROM cypress/base
 
 # disable shared memory X11 affecting Cypress v4 and Chrome
 # https://github.com/cypress-io/cypress-docker-images/issues/270
@@ -47,9 +47,8 @@ RUN echo  " node version:    $(node -v) \n" \
   "yarn version:    $(yarn -v) \n" \
   "debian version:  $(cat /etc/debian_version) \n" \
   "user:            $(whoami) \n" \
-  "chrome:          $(google-chrome --version || true) \n" \
-  "firefox:         $(firefox --version || true) \n"
 
-#copy test from projects
+#copy tests from projects
 COPY . .
+
 ENTRYPOINT ["npm", "run"]
