@@ -36,6 +36,10 @@ class MainPage{
         return cy.get('.rzd-go-to-result-button');
     }
 
+    get mainHeaderTitle(){
+        return  cy.get('.unfolding-block__header')
+    }
+
     setFromStation(text){
         this.directionFrom.type(text);
     }
