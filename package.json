@@ -24,9 +24,9 @@
   },
   "homepage": "https://github.com/keeper73/cypress-allure-ci#readme",
   "devDependencies": {
-    "@shelex/cypress-allure-plugin": "^2.5.1",
-    "cypress": "^7.4.0",
-    "cypress-cucumber-preprocessor": "^4.1.1"
+    "@shelex/cypress-allure-plugin": "^2.8.6",
+    "cypress": "^8.0.0",
+    "cypress-cucumber-preprocessor": "^4.1.4"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
